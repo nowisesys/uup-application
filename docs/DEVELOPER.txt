@@ -1,0 +1,14 @@
+DEVELOPER NOTES:
+
+*) COMPOSER:
+
+    When integrating external packages that requires modifications, setup composer
+    autoload to use local repositories of required packages:
+
+        bash$> COMPOSER=composer-dev.json composer update
+            ...
+          - Installing nowise/uup-application-options (1.0.p): Symlinking from ../uup-application-options
+            ...
+        Generating autoload files
+
+    Make sure to clone related packages in a parallell directory first.
