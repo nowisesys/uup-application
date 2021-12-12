@@ -1,6 +1,6 @@
 {
     "name": "nowise/uup-application",
-    "description": "Run same monitored action both from CLI and HTTP requests.",
+    "description": "Run same monitored action from both CLI and HTTP requests.",
     "type": "library",
     "license": "Apache-2.0",
     "authors": [

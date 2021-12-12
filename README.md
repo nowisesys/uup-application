@@ -1,7 +1,7 @@
-UUP-APPLICATION - Run monitored action
+UUP-APPLICATION
 ==========================================
 
-Classes for running monitored command. Supports running same action both from CLI and HTTP requests.
+Run the same command action both for CLI command line and HTTP requests with monitoring.
 
 ### ACTIONS:
 
@@ -16,8 +16,8 @@ declare(strict_types=1);
 
 require_once(__DIR__ . '/../../vendor/autoload.php');
 
-use App\Application\Actions\Generate\Model\GeneratorAction as ModelGeneratorAction;
-use App\Application\ApplicationRunner;
+use MyApp\Actions\ModelGeneratorAction;
+use UUP\Application\Command\ApplicationRunner;
 
 $action = new ModelGeneratorAction();
 $runner = new ApplicationRunner($action);
@@ -38,3 +38,29 @@ are of handling help or quiet options.
 
 The runner execute the action class and provides error monitoring. By default, runner will terminate action when a 
 throwable get caught. The error behavior can be overridden by action class.
+
+### INLINE:
+
+For simple tasks, use an anonymous (java-style) class with implementations of wanted methods:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+require_once(__DIR__ . '/../vendor/autoload.php');
+
+use UUP\Application\Command\ApplicationAction;
+use UUP\Application\Command\ApplicationRunner;
+
+(new ApplicationRunner(new class extends ApplicationAction {
+
+    public function execute(): void
+    {
+        // TODO: Implement the business logic for script (this method is required).
+    }
+
+}))->execute();
+```
+
+See [example](example) directory for code examples.

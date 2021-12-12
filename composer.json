@@ -1,7 +1,7 @@
 {
     "name": "nowise/uup-application",
-    "version": "1.0.0",
-    "description": "Monitored command action from CLI and HTTP requests.",
+    "version": "1.0.1",
+    "description": "Run monitored command action for CLI command line and HTTP requests.",
     "type": "library",
     "keywords": [
         "application",
