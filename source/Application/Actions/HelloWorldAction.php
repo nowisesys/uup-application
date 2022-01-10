@@ -39,6 +39,11 @@ class HelloWorldAction extends ApplicationAction
         parent::usage();
     }
 
+    public function version(): void
+    {
+        printf("%s %s\n", $this->getScript(), $this->getVersion());
+    }
+
     public function setup(): void
     {
         if ($this->options->isMissing('my-name')) {
@@ -51,5 +56,15 @@ class HelloWorldAction extends ApplicationAction
         if ($this->options->hasOption('my-name')) {
             printf("Hello world, %s!\n", $this->options->getString('my-name'));
         }
+    }
+
+    public function getVersion(): string
+    {
+        return "1.2.3";
+    }
+
+    public function getScript(): string
+    {
+        return "hello-world";
     }
 }
