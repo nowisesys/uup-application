@@ -35,16 +35,25 @@ class ApplicationRunner extends ApplicationBase implements ApplicationInterface
         $this->action->setApplicationOptions($this->getApplicationOptions());
     }
 
-    function usage(): void
+    public function usage(): void
     {
         $this->action->usage();
         exit(0);
     }
 
-    function execute(): void
+    public function version(): void
+    {
+        $this->action->version();
+        exit(0);
+    }
+
+    public function execute(): void
     {
         if ($this->getApplicationOptions()->hasOption('help')) {
             $this->usage();
+        }
+        if ($this->getApplicationOptions()->hasOption('version')) {
+            $this->version();
         }
         if ($this->getApplicationOptions()->hasOption('quiet')) {
             $this->startQuietMode();

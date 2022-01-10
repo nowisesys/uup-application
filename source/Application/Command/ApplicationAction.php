@@ -26,6 +26,11 @@ abstract class ApplicationAction extends ApplicationBase implements ApplicationI
 {
     protected ApplicationOptionsInterface $options;
 
+    public function version(): void
+    {
+        printf("%s v%s\n", $this->getScript(), $this->getVersion());
+    }
+
     public function setApplicationOptions(ApplicationOptionsInterface $options): void
     {
         $this->options = $options;
@@ -44,5 +49,10 @@ abstract class ApplicationAction extends ApplicationBase implements ApplicationI
     public function getScript(): string
     {
         return $this->options->getScript();
+    }
+
+    public function getVersion(): string
+    {
+        return "0.0.0";
     }
 }

@@ -29,6 +29,7 @@ abstract class ApplicationBase implements ApplicationInterface
     {
         printf("Generic options:\n");
         printf("  help:     Show this casual help.\n");
+        printf("  version:  Show version information.\n");
         printf("  verbose:  Run in verbose mode.\n");
         printf("  quiet:    Run in quiet mode.\n");
         printf("  debug:    Enable debug output.\n");

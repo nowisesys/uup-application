@@ -26,6 +26,8 @@ interface ApplicationInterface
 {
     function usage(): void;
 
+    function version(): void;
+
     function setup(): void;
 
     function execute(): void;
