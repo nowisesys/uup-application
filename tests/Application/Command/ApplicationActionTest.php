@@ -48,6 +48,14 @@ class ApplicationActionTest extends TestCase
         $this->assertEquals('phpunit', $action->getScript());
     }
 
+    public function testGetVersion()
+    {
+        $action = new MyApplicationAction();
+
+        $this->assertNotEmpty($action->getVersion());
+        $this->assertEquals('0.0.0', $action->getVersion());
+    }
+
     public function testAddApplicationOption()
     {
         $action = new MyApplicationAction();
